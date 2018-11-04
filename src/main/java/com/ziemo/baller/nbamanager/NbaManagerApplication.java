@@ -5,16 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class NbaManagerApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(NbaManagerApplication.class, args);
 	}
 }
 
 
-
-
 /*
+README
 Use Spring Boot to create the project.
 From 2 to 3 resources.
 Between two of available resources, relation have to be defined.

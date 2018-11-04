@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PlayerRepository extends CrudRepository<Player, Integer> {
 
-	//waiting for archieved
+	Iterable<Player> findByArchived(boolean archived);
 
+	Player findByIdAndArchived(int id, boolean archived);
 }

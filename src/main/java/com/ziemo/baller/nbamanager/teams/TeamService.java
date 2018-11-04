@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TeamService implements ResourceService<Team> {
 
-	private TeamRepository repository;
+	TeamRepository repository;
 
 	public TeamService(TeamRepository repository) {
 		this.repository = repository;
@@ -32,5 +32,15 @@ public class TeamService implements ResourceService<Team> {
 	@Override
 	public void delete(int id) {
 		this.repository.deleteById(id);
+	}
+
+	@Override
+	public void finalDelete(int id) {
+		this.repository.deleteById(id);
+	}
+
+	@Override
+	public Iterable<Team> getAllByAdmin() {
+		return this.repository.findByArchived(true);
 	}
 }

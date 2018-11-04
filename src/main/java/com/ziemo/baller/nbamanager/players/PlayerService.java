@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PlayerService implements ResourceService<Player> {
 
-	private PlayerRepository repository;
+	PlayerRepository repository;
 
 	public PlayerService(PlayerRepository repository) {
 		this.repository = repository;
@@ -35,4 +35,13 @@ public class PlayerService implements ResourceService<Player> {
 		this.repository.deleteById(id);
 	}
 
+	@Override
+	public void finalDelete(int id) {
+		this.repository.deleteById(id);
+	}
+
+	@Override
+	public Iterable<Player> getAllByAdmin() {
+		return this.repository.findByArchived(true);
+	}
 }

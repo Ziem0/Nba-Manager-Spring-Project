@@ -10,4 +10,7 @@ public interface ResourceService<T> {
 
 	void delete(int id);
 
+	void finalDelete(int id);
+
+	Iterable<T> getAllByAdmin();
 }
